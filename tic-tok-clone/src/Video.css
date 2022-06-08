@@ -5,3 +5,9 @@
     height: 100%;
     scroll-snap-align: start;
 }
+
+.video_player {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
