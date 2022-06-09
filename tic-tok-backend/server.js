@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import data from './data.js'
 import tictokVideos from './dbModel.js'
+import Cors from 'cors';
 
 //configure app
 const app = express();
@@ -11,6 +12,7 @@ const port = 9000;
 
 //middleware - use express's json functionality before testing post api with mongodb
 app.use(express.json());
+app.use(Cors());
 //other middlewares
 /* app.use((req, res, next) => {
    res.setHeaders('Access-Control-Allow-Origin', '*'),
