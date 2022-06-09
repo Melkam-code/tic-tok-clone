@@ -1,21 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './VideoSidebar.css'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import MessageIcon from '@mui/icons-material/Message';
 import SendIcon from '@mui/icons-material/Send';
 
+function VideoSidebar({ likes, shares, messages }) {
+  const [liked, setLiked] = useState(false);
 
-function VideoSidebar() {
   return (
     <div className='video_sidebar'>
       <div className="video_sidebar_button">
-          <FavoriteBorderIcon fontSize="large" />
+        {liked ? <FavoriteIcon fontSize='large' onClick={(e) => setLiked(false)} /> :
+          <FavoriteBorderIcon fontSize="large" onClick={(e) => setLiked(true)} />}
+          <p>{liked ? likes + 1 : likes}</p>
       </div>
       <div className="video_sidebar_button">
           <MessageIcon fontSize="large" />
+          <p>{messages}</p>
       </div>
       <div className="video_sidebar_button">
           <SendIcon fontSize="large" />
+          <p>{shares}</p>
       </div>
     </div>
   )
