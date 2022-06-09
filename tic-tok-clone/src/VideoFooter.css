@@ -6,6 +6,10 @@
     display: flex;
 }
 
+.video_footer_text {
+  width: 80%;
+}
+
 .video_footer_text > p {
    padding-bottom: 20px;
 }
@@ -20,8 +24,8 @@
 
 .video_footer_tic > .ticker {
     height: fit-content;
-    margin-left: 30px;
-    width: 60%;
+    margin-left: 50px;
+    width: 100%;
 }
 
 .video_footer_tic h1 {
@@ -29,7 +33,7 @@
 }
 
 .video_footer_record {
-    animation: spinTheRecord infinite 5s linear;
+    animation: spinTheRecord infinite 3s linear;
     height: 50px;
     filter: invert(1);
     position: absolute;

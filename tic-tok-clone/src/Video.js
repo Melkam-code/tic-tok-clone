@@ -21,7 +21,7 @@ function Video({ url, likes, messages, shares, channel, description, song }) {
 
   return (
     <div className='video'>
-        <video autoplay loop 
+        <video autoPlay loop 
         onClick={handleVideoPress}
         ref={videoRef}
         className='video_player'>
