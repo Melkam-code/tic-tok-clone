@@ -12,11 +12,11 @@ const port = 9000;
 //middleware - use express's json functionality before testing post api with mongodb
 app.use(express.json());
 //other middlewares
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
    res.setHeaders('Access-Control-Allow-Origin', '*'),
    res.setHeaders('Access-Control-Allow-Headers', '*'),
    next()
-})
+}) */
 
 //db config
 const connection_url = "mongodb+srv://melkam:melkam@cluster1.b8cq6c6.mongodb.net/?retryWrites=true&w=majority";
@@ -56,5 +56,5 @@ app.get('/v2/posts', (req, res) => {
 })
 
 //make app listen to port
-app.listen(port, () => console.log(`Listening on localhost: ${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Listening on localhost: ${port}`));
 
